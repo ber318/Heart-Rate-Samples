@@ -15,8 +15,6 @@
 		997EB9BE247C43400020B170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997EB9BC247C43400020B170 /* Main.storyboard */; };
 		997EB9C0247C43400020B170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 997EB9BF247C43400020B170 /* Assets.xcassets */; };
 		997EB9C3247C43400020B170 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997EB9C1247C43400020B170 /* LaunchScreen.storyboard */; };
-		997EB9CE247C43400020B170 /* HeartRateAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EB9CD247C43400020B170 /* HeartRateAppTests.swift */; };
-		997EB9D9247C43400020B170 /* HeartRateAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EB9D8247C43400020B170 /* HeartRateAppUITests.swift */; };
 		997EB9DE247C43400020B170 /* HeartRateApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 997EB9DD247C43400020B170 /* HeartRateApp WatchKit App.app */; };
 		997EB9E4247C43400020B170 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997EB9E2247C43400020B170 /* Interface.storyboard */; };
 		997EB9E6247C43400020B170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 997EB9E5247C43400020B170 /* Assets.xcassets */; };
@@ -29,20 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		997EB9CA247C43400020B170 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 997EB9AD247C43400020B170 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 997EB9B4247C43400020B170;
-			remoteInfo = HeartRateApp;
-		};
-		997EB9D5247C43400020B170 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 997EB9AD247C43400020B170 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 997EB9B4247C43400020B170;
-			remoteInfo = HeartRateApp;
-		};
 		997EB9DF247C43400020B170 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 997EB9AD247C43400020B170 /* Project object */;
@@ -96,12 +80,6 @@
 		997EB9BF247C43400020B170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		997EB9C2247C43400020B170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		997EB9C4247C43400020B170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		997EB9C9247C43400020B170 /* HeartRateAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartRateAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		997EB9CD247C43400020B170 /* HeartRateAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateAppTests.swift; sourceTree = "<group>"; };
-		997EB9CF247C43400020B170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		997EB9D4247C43400020B170 /* HeartRateAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartRateAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		997EB9D8247C43400020B170 /* HeartRateAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateAppUITests.swift; sourceTree = "<group>"; };
-		997EB9DA247C43400020B170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		997EB9DD247C43400020B170 /* HeartRateApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HeartRateApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		997EB9E3247C43400020B170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		997EB9E5247C43400020B170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,20 +105,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		997EB9C6247C43400020B170 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		997EB9D1247C43400020B170 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		997EB9E9247C43400020B170 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,8 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				997EB9B7247C43400020B170 /* HeartRateApp */,
-				997EB9CC247C43400020B170 /* HeartRateAppTests */,
-				997EB9D7247C43400020B170 /* HeartRateAppUITests */,
 				997EB9E1247C43400020B170 /* HeartRateApp WatchKit App */,
 				997EB9F0247C43400020B170 /* HeartRateApp WatchKit Extension */,
 				997EB9B6247C43400020B170 /* Products */,
@@ -169,8 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				997EB9B5247C43400020B170 /* HeartRateApp.app */,
-				997EB9C9247C43400020B170 /* HeartRateAppTests.xctest */,
-				997EB9D4247C43400020B170 /* HeartRateAppUITests.xctest */,
 				997EB9DD247C43400020B170 /* HeartRateApp WatchKit App.app */,
 				997EB9EC247C43400020B170 /* HeartRateApp WatchKit Extension.appex */,
 			);
@@ -189,24 +149,6 @@
 				997EB9C4247C43400020B170 /* Info.plist */,
 			);
 			path = HeartRateApp;
-			sourceTree = "<group>";
-		};
-		997EB9CC247C43400020B170 /* HeartRateAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				997EB9CD247C43400020B170 /* HeartRateAppTests.swift */,
-				997EB9CF247C43400020B170 /* Info.plist */,
-			);
-			path = HeartRateAppTests;
-			sourceTree = "<group>";
-		};
-		997EB9D7247C43400020B170 /* HeartRateAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				997EB9D8247C43400020B170 /* HeartRateAppUITests.swift */,
-				997EB9DA247C43400020B170 /* Info.plist */,
-			);
-			path = HeartRateAppUITests;
 			sourceTree = "<group>";
 		};
 		997EB9E1247C43400020B170 /* HeartRateApp WatchKit App */ = {
@@ -266,42 +208,6 @@
 			productReference = 997EB9B5247C43400020B170 /* HeartRateApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		997EB9C8247C43400020B170 /* HeartRateAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 997EBA08247C43400020B170 /* Build configuration list for PBXNativeTarget "HeartRateAppTests" */;
-			buildPhases = (
-				997EB9C5247C43400020B170 /* Sources */,
-				997EB9C6247C43400020B170 /* Frameworks */,
-				997EB9C7247C43400020B170 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				997EB9CB247C43400020B170 /* PBXTargetDependency */,
-			);
-			name = HeartRateAppTests;
-			productName = HeartRateAppTests;
-			productReference = 997EB9C9247C43400020B170 /* HeartRateAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		997EB9D3247C43400020B170 /* HeartRateAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 997EBA0B247C43400020B170 /* Build configuration list for PBXNativeTarget "HeartRateAppUITests" */;
-			buildPhases = (
-				997EB9D0247C43400020B170 /* Sources */,
-				997EB9D1247C43400020B170 /* Frameworks */,
-				997EB9D2247C43400020B170 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				997EB9D6247C43400020B170 /* PBXTargetDependency */,
-			);
-			name = HeartRateAppUITests;
-			productName = HeartRateAppUITests;
-			productReference = 997EB9D4247C43400020B170 /* HeartRateAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		997EB9DC247C43400020B170 /* HeartRateApp WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 997EBA01247C43400020B170 /* Build configuration list for PBXNativeTarget "HeartRateApp WatchKit App" */;
@@ -343,7 +249,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Brian Remer";
 				TargetAttributes = {
 					997EB9B4247C43400020B170 = {
@@ -354,16 +260,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					997EB9C8247C43400020B170 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 997EB9B4247C43400020B170;
-					};
-					997EB9D3247C43400020B170 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
-						TestTargetID = 997EB9B4247C43400020B170;
 					};
 					997EB9DC247C43400020B170 = {
 						CreatedOnToolsVersion = 9.2;
@@ -397,8 +293,6 @@
 			projectRoot = "";
 			targets = (
 				997EB9B4247C43400020B170 /* HeartRateApp */,
-				997EB9C8247C43400020B170 /* HeartRateAppTests */,
-				997EB9D3247C43400020B170 /* HeartRateAppUITests */,
 				997EB9DC247C43400020B170 /* HeartRateApp WatchKit App */,
 				997EB9EB247C43400020B170 /* HeartRateApp WatchKit Extension */,
 			);
@@ -413,20 +307,6 @@
 				997EB9C3247C43400020B170 /* LaunchScreen.storyboard in Resources */,
 				997EB9C0247C43400020B170 /* Assets.xcassets in Resources */,
 				997EB9BE247C43400020B170 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		997EB9C7247C43400020B170 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		997EB9D2247C43400020B170 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,22 +339,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		997EB9C5247C43400020B170 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				997EB9CE247C43400020B170 /* HeartRateAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		997EB9D0247C43400020B170 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				997EB9D9247C43400020B170 /* HeartRateAppUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		997EB9E8247C43400020B170 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,16 +353,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		997EB9CB247C43400020B170 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 997EB9B4247C43400020B170 /* HeartRateApp */;
-			targetProxy = 997EB9CA247C43400020B170 /* PBXContainerItemProxy */;
-		};
-		997EB9D6247C43400020B170 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 997EB9B4247C43400020B170 /* HeartRateApp */;
-			targetProxy = 997EB9D5247C43400020B170 /* PBXContainerItemProxy */;
-		};
 		997EB9E0247C43400020B170 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 997EB9DC247C43400020B170 /* HeartRateApp WatchKit App */;
@@ -553,6 +407,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -560,8 +415,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -587,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -610,6 +467,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -617,8 +475,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -638,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -659,7 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = heartRateApp.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "ef4f0596-c580-48e8-a45d-933f274e3b60";
-				PROVISIONING_PROFILE_SPECIFIER = "Brian Remer Watchkit Extension";
+				PROVISIONING_PROFILE_SPECIFIER = WatchKitExtDevMM;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -681,7 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = heartRateApp.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "ef4f0596-c580-48e8-a45d-933f274e3b60";
-				PROVISIONING_PROFILE_SPECIFIER = "Brian Remer Watchkit Extension";
+				PROVISIONING_PROFILE_SPECIFIER = WatchKitExtDevMM;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -702,7 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = heartRateApp.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "79feeca0-1501-409e-a9ee-d81f15d672f0";
-				PROVISIONING_PROFILE_SPECIFIER = "Brian Remer Watchkit";
+				PROVISIONING_PROFILE_SPECIFIER = WatchKitDevMM;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -723,7 +583,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = heartRateApp.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "79feeca0-1501-409e-a9ee-d81f15d672f0";
-				PROVISIONING_PROFILE_SPECIFIER = "Brian Remer Watchkit";
+				PROVISIONING_PROFILE_SPECIFIER = WatchKitDevMM;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -737,6 +597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HeartRateApp/HeartRateApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 24888K33HW;
@@ -745,7 +606,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = heartRateApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "adb83d91-b77a-483e-baa0-9683a5adc8d2";
-				PROVISIONING_PROFILE_SPECIFIER = "Brian Remer HeartRateApp";
+				PROVISIONING_PROFILE_SPECIFIER = HeartRateAppDevMM;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -756,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HeartRateApp/HeartRateApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 24888K33HW;
@@ -764,79 +626,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = heartRateApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "adb83d91-b77a-483e-baa0-9683a5adc8d2";
-				PROVISIONING_PROFILE_SPECIFIER = "Brian Remer HeartRateApp";
+				PROVISIONING_PROFILE_SPECIFIER = HeartRateAppDevMM;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		997EBA09247C43400020B170 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24888K33HW;
-				INFOPLIST_FILE = HeartRateAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = research.HeartRateAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeartRateApp.app/HeartRateApp";
-			};
-			name = Debug;
-		};
-		997EBA0A247C43400020B170 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24888K33HW;
-				INFOPLIST_FILE = HeartRateAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = research.HeartRateAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeartRateApp.app/HeartRateApp";
-			};
-			name = Release;
-		};
-		997EBA0C247C43400020B170 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 24888K33HW;
-				INFOPLIST_FILE = HeartRateAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = research.HeartRateAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "24256e52-4f8c-4a48-8a5a-ec5ed314f5fd";
-				PROVISIONING_PROFILE_SPECIFIER = HeartRateUITests;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HeartRateApp;
-			};
-			name = Debug;
-		};
-		997EBA0D247C43400020B170 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 24888K33HW;
-				INFOPLIST_FILE = HeartRateAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = research.HeartRateAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "24256e52-4f8c-4a48-8a5a-ec5ed314f5fd";
-				PROVISIONING_PROFILE_SPECIFIER = HeartRateUITests;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HeartRateApp;
 			};
 			name = Release;
 		};
@@ -875,24 +667,6 @@
 			buildConfigurations = (
 				997EBA06247C43400020B170 /* Debug */,
 				997EBA07247C43400020B170 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		997EBA08247C43400020B170 /* Build configuration list for PBXNativeTarget "HeartRateAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				997EBA09247C43400020B170 /* Debug */,
-				997EBA0A247C43400020B170 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		997EBA0B247C43400020B170 /* Build configuration list for PBXNativeTarget "HeartRateAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				997EBA0C247C43400020B170 /* Debug */,
-				997EBA0D247C43400020B170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
