@@ -1,2 +1,2 @@
-# Neuro-Edge
-In this project, we investigate how neuromorphic computing can pave the way for bringing machine learning to edge devices such as smartwatches, autonomous cars, etc. Here, we will leverage Intel Loihi Platform to develop various real-world edge computing applications.
+# Heart Rate Samples
+This is an Apple Watch app with a companion iPhone app that collects Heart Rate samples from the user every few seconds. The collected data is then put in a csv file with timestamps that can be emailed to the desired location for the data.
