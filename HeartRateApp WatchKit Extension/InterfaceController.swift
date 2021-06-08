@@ -11,16 +11,37 @@ import WatchKit
 import HealthKit
 import Foundation
 import WatchConnectivity
+import CoreMotion
 
 class InterfaceController: WKInterfaceController {
 
-    
     //HealthKit Variables
     private var healthStore = HKHealthStore()
     let heartRateQuantity = HKUnit(from: "count/min")
     private var value = 0
     var queryArray = [HKAnchoredObjectQuery]()
     var dataArray = [String]()
+    
+    //CoreMotion variables
+    private var coreMotion = CMMotionManager()
+    let queue = OperationQueue()
+    @IBOutlet var xaccel: WKInterfaceLabel!
+    @IBOutlet var yaccel: WKInterfaceLabel!
+    @IBOutlet var zaccel: WKInterfaceLabel!
+    @IBOutlet var xGyroLabel: WKInterfaceLabel!
+    @IBOutlet var yGyroLabel: WKInterfaceLabel!
+    @IBOutlet var zGyroLabel: WKInterfaceLabel!
+    
+    
+    //data keeping track of the x, y, and z for accelerometer
+    private var xAccelData = 0.0
+    private var yAccelData = 0.0
+    private var zAccelData = 0.0
+    
+    //data keeping track of the x, y, and z for gyroscope
+    private var xGyro = 0.0
+    private var yGyro = 0.0
+    private var zGyro = 0.0
     
     //session variables
     var session = WCSession.default//**3
@@ -32,6 +53,7 @@ class InterfaceController: WKInterfaceController {
     
     //workout session variable
     lazy var workoutSession = startWorkout()
+    lazy var workoutSessionNewOS = startWorkoutWithHealthStore(healthStore)
     
     @IBOutlet var displayTest: WKInterfaceLabel!
     @IBOutlet var startButton: WKInterfaceButton!
@@ -73,10 +95,18 @@ class InterfaceController: WKInterfaceController {
             getHeartRate = true
             
             //starting the workoutsession for the watch to run in the background
-            healthStore.start(workoutSession)
-            
+            //healthStore.start(workoutSessionNewOS!)
+            if #available(watchOSApplicationExtension 5.0, *) {
+                workoutSessionNewOS?.startActivity(with: Date())
+            } else {
+                healthStore.start(workoutSessionNewOS!)
+            }
             //starting the query for the heart rate data
             queryArray.append(getCurrentHeartRateData())
+            
+            //starting the other sensors
+            startAccelerometer()
+            altGyroscopeStarter()
         }
         //runs when the Stop button is pressed
         else{
@@ -101,9 +131,75 @@ class InterfaceController: WKInterfaceController {
             //removes all data from the array once it has been sent
             dataArray.removeAll()
             
-            //ends the workout session
-            healthStore.end(workoutSession)
+            //stops the other sensors
+            stopAccelerometer()
+            stopDeviceMotionUpdates()
+            
+            //ends the workout session with the phone
+            if #available(watchOSApplicationExtension 5.0, *) {
+                workoutSessionNewOS?.end()
+            } else {
+                healthStore.end(workoutSessionNewOS!)
+            }
         }
+    }
+    
+    //function that starts collecting accelerometer data
+    func startAccelerometer(){
+        if coreMotion.isAccelerometerAvailable{
+            coreMotion.accelerometerUpdateInterval = 0.1
+            coreMotion.startAccelerometerUpdates(to: .main) {
+                [weak self] (data, error) in
+                guard let data = data, error == nil else {
+                    return
+                }
+                
+                self!.xaccel.setText(String(format: "%.2f", data.acceleration.x))
+                self!.yaccel.setText(String(format: "%.2f", data.acceleration.y))
+                self!.zaccel.setText(String(format: "%.2f", data.acceleration.z))
+                
+                self!.xAccelData = data.acceleration.x
+                self!.yAccelData = data.acceleration.y
+                self!.zAccelData = data.acceleration.z
+            }
+        }
+    }
+    
+    //function to stop accelerometer updates
+    func stopAccelerometer(){
+        coreMotion.stopAccelerometerUpdates()
+    }
+    
+    //starts the Gyroscope using the Device Motion Updates
+    func altGyroscopeStarter(){
+        coreMotion.deviceMotionUpdateInterval = 0.1
+        coreMotion.startDeviceMotionUpdates(to: .main){
+            (deviceMotion: CMDeviceMotion?, error: Error?) in
+            if error != nil {
+                print("Encountered error: \(error!)")
+            }
+            
+            if deviceMotion != nil {
+                self.xGyro = deviceMotion!.rotationRate.x
+                self.yGyro = deviceMotion!.rotationRate.y
+                self.zGyro = (deviceMotion?.rotationRate.z)!
+                
+                self.xGyroLabel.setText(String(format: "%.2f", deviceMotion!.rotationRate.x))
+                self.yGyroLabel.setText(String(format: "%.2f", deviceMotion!.rotationRate.y))
+                self.zGyroLabel.setText(String(format: "%.2f", deviceMotion!.rotationRate.z))
+                
+                self.dataArray.append(self.exercise + "," + "," + String(self.xAccelData) + "," + String(self.yAccelData) + "," + String(self.zAccelData) + "," + String(self.xGyro) + "," + String(self.yGyro) + "," + String(self.zGyro) + "\n")
+                
+            }
+            
+            
+        }
+        
+    }
+    
+    //stops the Gyroscope
+    func stopDeviceMotionUpdates(){
+        coreMotion.stopDeviceMotionUpdates()
     }
     
     //function that builds a workout session so the watch collects data in the background
@@ -263,12 +359,44 @@ class InterfaceController: WKInterfaceController {
             self.currentHeartRateBPM = lastHeartRateSample.quantity.doubleValue(for: HKUnit(from: "count/min"))
             
             bpmActual.setText(String(currentHeartRateBPM))
-            dataArray.append(exercise + "," + String(currentHeartRateBPM) + "\n")
+            dataArray.append(exercise + "," + String(currentHeartRateBPM) + "," + String(xAccelData) + "," + String(yAccelData) + "," + String(zAccelData) + "," + String(xGyro) + "," + String(yGyro) + "," + String(zGyro) + "\n")
             
         }
         
     }
     
+    
+    //function that starts a workoutsession
+    func startWorkoutWithHealthStore(_ healthStore: HKHealthStore
+                                    ) -> HKWorkoutSession? {
+      let configuration = HKWorkoutConfiguration()
+        configuration.activityType = .running
+      
+      let session1 : HKWorkoutSession
+      do {
+        if #available(watchOSApplicationExtension 5.0, *) {
+            session1 = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
+        } else {
+            let configuration = HKWorkoutConfiguration()
+            configuration.activityType = .running
+            configuration.locationType = .outdoor
+            session1 = try! HKWorkoutSession(configuration: configuration)
+            // Fallback on earlier versions
+        }
+      } catch let error{
+        // let the user know about the error
+        return nil
+      }
+      
+        if #available(watchOSApplicationExtension 5.0, *) {
+            session1.startActivity(with: Date())
+        } else {
+            // Fallback on earlier versions
+        }
+      //self.session = session
+      //self.healthStore = healthStore
+      return session1
+    }
     
     
     

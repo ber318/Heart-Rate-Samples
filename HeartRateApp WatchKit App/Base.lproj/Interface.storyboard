@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aLH-k8-FHN">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17132" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aLH-k8-FHN">
+    <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17031"/>
     </dependencies>
     <scenes>
         <!--Exercise Interface Controller-->
@@ -29,6 +27,26 @@
                                 <action selector="sleepingButtonPress" destination="aLH-k8-FHN" id="owS-yr-8ZX"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Swimming" id="xtY-ho-IDM">
+                            <connections>
+                                <action selector="swimmingButtonPress" destination="aLH-k8-FHN" id="cTb-KE-B07"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Tennis" id="H9B-HS-Noe">
+                            <connections>
+                                <action selector="tennisButtonPress" destination="aLH-k8-FHN" id="F9A-Ce-CJy"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Bicep Curl" id="IPs-OX-gZK">
+                            <connections>
+                                <action selector="curlButtonPress" destination="aLH-k8-FHN" id="Ajy-JZ-u5s"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Bench Press" id="JrM-rq-YQU">
+                            <connections>
+                                <action selector="benchButtonPress" destination="aLH-k8-FHN" id="fqU-OA-hiL"/>
+                            </connections>
+                        </button>
                         <button width="1" alignment="left" title="Choose an Exercise" id="1bf-xd-tOy">
                             <connections>
                                 <action selector="changeScreenColor" destination="aLH-k8-FHN" id="zy6-YB-Ack"/>
@@ -37,8 +55,12 @@
                         </button>
                     </items>
                     <connections>
+                        <outlet property="Bench" destination="JrM-rq-YQU" id="e1F-Vk-GL5"/>
+                        <outlet property="Curls" destination="IPs-OX-gZK" id="Vce-fr-eAm"/>
                         <outlet property="Running" destination="0Ch-xT-RhC" id="mcN-he-fE5"/>
                         <outlet property="Sleeping" destination="sh5-cy-qIl" id="weo-mM-qDB"/>
+                        <outlet property="Swimming" destination="xtY-ho-IDM" id="us3-nl-dgo"/>
+                        <outlet property="Tennis" destination="H9B-HS-Noe" id="b1Q-Qh-pPP"/>
                         <outlet property="Walking" destination="v81-xo-Ao8" id="KD2-iU-EOL"/>
                         <outlet property="changeScreen" destination="1bf-xd-tOy" id="bqK-Cb-kH9"/>
                     </connections>
@@ -60,18 +82,58 @@
                             </connections>
                         </button>
                         <label height="46" alignment="left" text="No Exercise Selected" id="dmh-sK-FmO"/>
-                        <label width="134" height="32" alignment="left" text="Heart Rate: " id="i9u-tZ-q3H"/>
-                        <label height="18" alignment="left" text="..." id="J09-fV-zwk"/>
+                        <group width="1" height="51" alignment="left" id="mrO-gu-ZxI">
+                            <items>
+                                <label width="89" height="32" alignment="left" text="Heart Rate: " id="i9u-tZ-q3H"/>
+                                <label height="31" alignment="left" text="..." id="J09-fV-zwk"/>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Accelerometer" id="MYH-GA-1V7"/>
+                        <group width="1" alignment="left" id="G9u-KF-ItB">
+                            <items>
+                                <label width="0.33000000000000002" alignment="left" text="X" id="lB4-aT-un4"/>
+                                <label width="0.33000000000000002" alignment="left" text="Y" id="GAV-oT-kJh"/>
+                                <label width="0.33000000000000002" alignment="left" text="Z" id="BIa-FQ-fXM"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="KQC-gO-qQg">
+                            <items>
+                                <label width="0.33000000000000002" alignment="left" text="x" id="Tsp-3q-zAb"/>
+                                <label width="0.33000000000000002" alignment="left" text="y" id="Jvd-sM-nGa"/>
+                                <label width="0.33000000000000002" alignment="left" text="z" id="QHK-ZX-YAH"/>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Gyroscope" id="oUF-sq-1CM"/>
+                        <group width="1" alignment="left" id="ANn-SC-hQt">
+                            <items>
+                                <label width="0.33000000000000002" alignment="left" text="X" id="gmn-qr-n9U"/>
+                                <label width="0.33000000000000002" alignment="left" text="Y" id="Idv-aR-kkN"/>
+                                <label width="0.33000000000000002" alignment="left" text="Z" id="FlQ-Yi-iYN"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="r68-2o-IlH">
+                            <items>
+                                <label width="0.33000000000000002" alignment="left" text="x" id="teP-2L-kz9"/>
+                                <label width="0.33000000000000002" alignment="left" text="y" id="af0-Jd-a7Q"/>
+                                <label width="0.33000000000000002" alignment="left" text="z" id="QSE-JT-BvV"/>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="bpm" destination="dmh-sK-FmO" id="vrr-Rq-2gr"/>
                         <outlet property="bpmActual" destination="J09-fV-zwk" id="meu-wU-xWy"/>
                         <outlet property="displayTest" destination="i9u-tZ-q3H" id="hMR-ht-Wba"/>
                         <outlet property="startButton" destination="ohQ-XW-V0T" id="hZr-aJ-ezo"/>
+                        <outlet property="xGyroLabel" destination="teP-2L-kz9" id="jgp-gC-jtw"/>
+                        <outlet property="xaccel" destination="Tsp-3q-zAb" id="sY7-ob-S1M"/>
+                        <outlet property="yGyroLabel" destination="af0-Jd-a7Q" id="3Qb-jG-RId"/>
+                        <outlet property="yaccel" destination="Jvd-sM-nGa" id="uQh-y0-Mha"/>
+                        <outlet property="zGyroLabel" destination="QSE-JT-BvV" id="UOY-uH-DDg"/>
+                        <outlet property="zaccel" destination="QHK-ZX-YAH" id="YSQ-Ag-FBy"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="370"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

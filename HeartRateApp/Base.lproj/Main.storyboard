@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,26 +16,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-O0-iwe">
-                                <rect key="frame" x="49" y="248" width="276" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAs-Uf-sUg">
+                                <rect key="frame" x="136" y="574" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="a7I-x1-wwz">
+                                <rect key="frame" x="124" y="290" width="127" height="32"/>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                                <connections>
+                                    <action selector="GChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="oFB-Dc-5Zr"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="cxt-fn-EFd">
+                                <rect key="frame" x="48" y="457" width="228" height="30"/>
+                                <connections>
+                                    <action selector="AgeVChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="RKC-Ub-pze"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdl-ja-I6T">
+                                <rect key="frame" x="301" y="461" width="24" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="I4F-Z7-hE7"/>
+                                    <constraint firstAttribute="width" constant="24" id="wVT-la-96e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Med-1H-1nv">
+                                <rect key="frame" x="172" y="417" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-O0-iwe">
+                                <rect key="frame" x="50" y="74" width="275" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="d29-Jg-0GN"/>
+                                </constraints>
                                 <state key="normal" title="Authorize Healthkit"/>
                                 <connections>
                                     <action selector="authorization:" destination="BYZ-38-t0r" eventType="touchUpInside" id="auo-ni-f0v"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testing Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAs-Uf-sUg">
-                                <rect key="frame" x="136" y="574" width="102" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Med-1H-1nv" firstAttribute="centerX" secondItem="a7I-x1-wwz" secondAttribute="centerX" id="LKI-9Y-boR"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="Kdl-ja-I6T" secondAttribute="trailing" constant="50" id="LRW-AG-Acf"/>
+                            <constraint firstItem="Med-1H-1nv" firstAttribute="centerX" secondItem="fAs-Uf-sUg" secondAttribute="centerX" id="Md6-II-gzK"/>
+                            <constraint firstAttribute="bottom" secondItem="Med-1H-1nv" secondAttribute="bottom" constant="229" id="PMG-Vu-Fgm"/>
+                            <constraint firstItem="Kdl-ja-I6T" firstAttribute="leading" secondItem="cxt-fn-EFd" secondAttribute="trailing" constant="27" id="T9B-gg-XUt"/>
+                            <constraint firstItem="Med-1H-1nv" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="172" id="W5y-ge-Hyi"/>
+                            <constraint firstItem="yAh-O0-iwe" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" constant="74" id="YVI-xT-YZl"/>
+                            <constraint firstItem="cxt-fn-EFd" firstAttribute="top" secondItem="Med-1H-1nv" secondAttribute="bottom" constant="19" id="b1T-BY-Hz7"/>
+                            <constraint firstItem="yAh-O0-iwe" firstAttribute="leading" secondItem="cxt-fn-EFd" secondAttribute="leading" id="fcS-Gd-S3L"/>
+                            <constraint firstItem="Med-1H-1nv" firstAttribute="top" secondItem="a7I-x1-wwz" secondAttribute="bottom" constant="96" id="frr-Gn-Kim"/>
+                            <constraint firstItem="fAs-Uf-sUg" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="136" id="gkj-eI-ZiA"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="Kdl-ja-I6T" secondAttribute="bottom" constant="185" id="lLk-qW-rfd"/>
+                            <constraint firstItem="yAh-O0-iwe" firstAttribute="centerX" secondItem="a7I-x1-wwz" secondAttribute="centerX" id="mbi-g4-f6Y"/>
+                            <constraint firstItem="Kdl-ja-I6T" firstAttribute="centerY" secondItem="cxt-fn-EFd" secondAttribute="centerY" id="mnd-dQ-ZNz"/>
+                            <constraint firstItem="yAh-O0-iwe" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kdl-ja-I6T" secondAttribute="trailing" id="tdf-uL-YTz"/>
+                            <constraint firstItem="fAs-Uf-sUg" firstAttribute="top" secondItem="cxt-fn-EFd" secondAttribute="bottom" constant="88" id="v0t-B0-efk"/>
+                            <constraint firstItem="Med-1H-1nv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="znc-Sc-vdI"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="Age" destination="cxt-fn-EFd" id="vPr-GZ-frU"/>
+                        <outlet property="AgeV" destination="Kdl-ja-I6T" id="Knz-NP-T9e"/>
+                        <outlet property="MF" destination="a7I-x1-wwz" id="hTD-ls-4yl"/>
                         <outlet property="label" destination="fAs-Uf-sUg" id="U1k-5z-Xf3"/>
                     </connections>
                 </viewController>

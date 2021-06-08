@@ -19,7 +19,29 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     private var healthStore = HKHealthStore()
     private var data = [String]()
     private var csvString = NSMutableString()
+    private var gender = "Male"
+    private var age = 0
+    @IBOutlet weak var MF: UISegmentedControl!
+    @IBOutlet weak var Age: UISlider!
+    @IBOutlet weak var AgeV: UILabel!
     
+    //function that tracks gender option
+    @IBAction func GChanged(_ sender: Any) {
+        switch MF.selectedSegmentIndex{
+        case 0:
+            gender = "Male"
+        case 1:
+            gender = "Female"
+        default:
+            break
+        }
+    }
+    
+    //function that tracks age slider
+    @IBAction func AgeVChange(_ sender: Any) {
+        AgeV.text = "\((Int)(Age.value))"
+        age = (Int)(Age.value)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +81,12 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     //function that converts the data from the array to a string for the csv file
     func convertDataToString(){
-        csvString.append("Exercise, Heart Rate\n")
+        //sets the csvString to nothing before rebuilding it
+        csvString = ""
+        
+        //appends the heading and data line by line
+        csvString.append("Age, Gender\n" + String(age) + "," + String(gender) + "\n")
+        csvString.append("Exercise, Heart Rate, X Acceleration, Y Acceleration, Z Acceleration, X Rotation Rate, Y Rotation Rate, Z Rotation Rate\n")
         for line in data{
             csvString.append(line)
         }
